@@ -2,7 +2,8 @@
 const { withSentryConfig } = require("@sentry/nextjs");
 
 const nextConfig = {
-  // deja vacío si no necesitas nada
+  // Nada obligatorio. Déjalo así.
+  // output: "standalone", // solo si Hostinger lo pide (normalmente no)
 };
 
 const sentryWebpackPluginOptions = {
@@ -12,7 +13,7 @@ const sentryWebpackPluginOptions = {
   widenClientFileUpload: true,
   tunnelRoute: "/monitoring",
   disableLogger: true,
-  automaticVercelMonitors: true,
+  automaticVercelMonitors: false
 };
 
 module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions);
